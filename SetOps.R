@@ -184,12 +184,14 @@ annovar_bed <- function(bdf,dbdir="/media/nwknoblauch/Data/annovar/humandb/",tmp
 
     infile <- file.path(tmpdir,"Input.bed")
     write.table(bdf,infile,sep="\t",col.names=F,row.names=F,quote=F)
-    cmd <- paste("/media/nwknoblauch/Data/annovar/annotate_variation.pl -outfile",outfile,"-build hg19",infile,dbdir,"--geneanno","-dbtype refGene")
-    system(cmd)
-    cmdt <- paste("/media/nwknoblauch/Data/annovar/table_annovar.pl",
+    annodbcmd <- paste0(dbdir,"../annotate_variation.pl - outfile ",outfile," -build hg19 ",infile," ",dbdir," --geneanno -dbtype refGene" )
+#    cmd <- paste("/media/nwknoblauch/Data/annovar/annotate_variation.pl -outfile",outfile,"-build hg19",infile,dbdir,"--geneanno","-dbtype refGene")
+    system(annodbcmd)
+    cmdt <- paste0(dbdir,"../table_annovar.pl ",
                   infile,
+                  " ",
                   dbdir,
-                  "--outfile ",outfilet,
+                  " --outfile ",outfilet,
                   " -protocol ljb26_all -operation f -build hg19 -otherinfo -nastring .")
     system(cmdt)
 
