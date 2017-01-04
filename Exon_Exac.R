@@ -23,7 +23,8 @@ dbdir = "/media/nwknoblauch/Data/annovar/humandb/"
 ExacDataDir <- "~/Desktop/Exac/temp/"
 #This is the directory where results will be stored
 ResultDir <- "~/Dropbox/BayesianDA/Exac/"
-#This is the directory containing coverage data
+#This is the directory containing sequence coverage data
+#The individual files for coverage can be found here: ftp://ftp.broadinstitute.org/pub/ExAC_release/release0.3.1/coverage/
 covdir <- "/media/nwknoblauch/Data/ExacCoverage/"
 #This is the path to the gene level Exac Z-scores (obtained from Xin, but a similar file can be obtained from 
 #ftp://ftp.broadinstitute.org/pub/ExAC_release/release0.3/functional_gene_constraint/fordist_cleaned_exac_r03_march16_z_pli_rec_null_data.txt)
